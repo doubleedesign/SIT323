@@ -5,6 +5,7 @@
 	"main": "app.ts",
 	"type": "module",
 	"scripts": {
+		"build": "tsc",
 		"start:local": "set NODE_ENV=LOCAL && nodemon  --watch",
 		"start": "nodemon  --watch"
 	},
