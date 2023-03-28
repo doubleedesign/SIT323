@@ -18,7 +18,7 @@ const logger = winston.createLogger({
 });
 
 function isValidInput(n1, n2) {
-	if(!isNaN(n1) || !isNaN(n2)) {
+	if(isNaN(n1) || isNaN(n2)) {
 		logger.log({
 			level: 'error',
 			message: `Invalid input. You entered ${n1} and ${n1}. Are these both numbers?`,
@@ -34,7 +34,7 @@ app.get('/add', (req, res, next) => {
 
 	// @ts-ignore
 	if(!req.query.n1 || !req.query.n2) {
-		res.status(400).json('Bad request. Correct format is /add?n1=x&n1=y');
+		res.status(400).json('Bad request. Correct format is /add?n1=x&n2=y');
 		next();
 	}
 
@@ -66,7 +66,7 @@ app.get('/subtract', (req, res, next) => {
 
 	// @ts-ignore
 	if(!req.query.n1 || !req.query.n2) {
-		res.status(400).json('Bad request. Correct format is /subtract?n1=x&n1=y');
+		res.status(400).json('Bad request. Correct format is /subtract?n1=x&n2=y');
 		next();
 	}
 
@@ -97,7 +97,7 @@ app.get('/multiply', (req, res, next) => {
 
 	// @ts-ignore
 	if(!req.query.n1 || !req.query.n2) {
-		res.status(400).json('Bad request. Correct format is /multiply?n1=x&n1=y');
+		res.status(400).json('Bad request. Correct format is /multiply?n1=x&n2=y');
 		next();
 	}
 
@@ -128,7 +128,7 @@ app.get('/divide', (req, res, next) => {
 
 	// @ts-ignore
 	if(!req.query.n1 || !req.query.n2) {
-		res.status(400).json('Bad request. Correct format is /divide?n1=x&n1=y');
+		res.status(400).json('Bad request. Correct format is /divide?n1=x&n2=y');
 		next();
 	}
 
