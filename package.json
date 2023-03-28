@@ -5,7 +5,8 @@
 	"main": "app.ts",
 	"type": "module",
 	"scripts": {
-		"start": "set NODE_ENV=LOCAL && nodemon  --watch"
+		"start:local": "set NODE_ENV=LOCAL && nodemon  --watch",
+		"start": "nodemon  --watch"
 	},
 	"author": "Leesa Ward",
 	"license": "ISC",
