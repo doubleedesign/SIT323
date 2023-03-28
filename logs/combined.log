@@ -1,1 +1,2 @@
 {"level":"error","message":"Invalid input. You entered 6 and 6. Are these both numbers?","service":"calculator-microservice","timestamp":"2023-03-21T02:18:00.797Z"}
+{"level":"error","message":"Invalid input. You entered 5 and 5. Are these both numbers?","service":"calculator-microservice","timestamp":"2023-03-28T01:48:28.273Z"}

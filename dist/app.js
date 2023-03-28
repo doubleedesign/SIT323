@@ -126,8 +126,8 @@ app.get('/divide', function (req, res, next) {
         next();
     }
 });
-if (process.env.NODE_ENV == 'local') {
-    app.listen(8080, function () {
+app.listen(8080, function () {
+    if (process.env.NODE_ENV === 'LOCAL') {
         console.log('Server running on port 8080');
-    });
-}
+    }
+});
