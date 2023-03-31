@@ -1,34 +1,8 @@
 import express from 'express';
-import winston from 'winston';
+import { isValidInput } from './utils';
+import { logger } from './logger';
 const app = express();
 
-const logger = winston.createLogger({
-	format: winston.format.combine(
-		winston.format.timestamp(),
-		winston.format.json()
-	),
-	defaultMeta: { service: 'calculator-microservice' },
-	transports: [
-		new winston.transports.Console({
-			format: winston.format.simple(),
-		}),
-		new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
-		new winston.transports.File({ filename: 'logs/combined.log' }),
-	],
-});
-
-function isValidInput(n1, n2) {
-	if(isNaN(n1) || isNaN(n2)) {
-		logger.log({
-			level: 'error',
-			message: `Invalid input. You entered ${n1} and ${n1}. Are these both numbers?`,
-		});
-
-		return false;
-	}
-
-	return true;
-}
 
 app.get('/add', (req, res, next) => {
 
